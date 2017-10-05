@@ -1,0 +1,14 @@
+{
+  "skins": {
+    "src.game.SceneBeginSkin": "resource/eui_skins/SceneBeginSkin.exml"
+  },
+  "autoGenerateExmlsList": true,
+  "exmls": [
+    "resource/eui_skins/GameSettingSkin.exml",
+    "resource/eui_skins/LevelIconSkin.exml",
+    "resource/eui_skins/SceneBeginSkin.exml",
+    "resource/eui_skins/WordSkin.exml",
+    "resource/eui_skins/SceneGameSkin.exml",
+    "resource/eui_skins/SceneLevelsSkin.exml"
+  ]
+}

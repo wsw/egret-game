@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="WordSkin" width="80" height="80" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="80" height="80" x="0" y="0" fillColor="0xffffff" strokeColor="0x0276d0"/>
+	<e:Label id="lb_text" text="字" x="0" y="0" width="80" height="80" textColor="0x000000" textAlign="center" verticalAlign="middle" size="60"/>
+</e:Skin>
