@@ -41,7 +41,7 @@ class SceneGame extends eui.Component {
             let temp = LevelDataManager.Shared().getLevel(i);
             words += temp.answer + temp.word;
         }
-        let wordList: string[] = words.split('');
+        let wordList: string[] = words.split('').sort();
         let wordsLg: number = this.group_words.numChildren;
         for (let i = 0; i < wordsLg; i++) {
             let wordrect = <Word>this.group_words.getChildAt(i);
