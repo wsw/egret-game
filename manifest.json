@@ -10,17 +10,17 @@
 	],
 	"game": [
 		"bin-debug/game/Word.js",
-		"bin-debug/game/LevelIcon.js",
+		"bin-debug/model/SoundManager.js",
 		"bin-debug/Main.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/game/AnswerWord.js",
 		"bin-debug/game/GameSetting .js",
-		"bin-debug/LoadingUI.js",
+		"bin-debug/game/LevelIcon.js",
 		"bin-debug/game/SceneBegin.js",
 		"bin-debug/game/SceneGame .js",
 		"bin-debug/game/SceneLevels.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/model/LevelDataManager.js",
-		"bin-debug/model/SoundManager.js"
+		"bin-debug/LoadingUI.js"
 	]
 }

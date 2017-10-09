@@ -14,7 +14,7 @@ class SceneBegin extends eui.Component {
     public constructor () {
         super();
         this.skinName = 'SceneBeginSkin';
-        SoundManager.Shared().PlayBGM();
+        SoundManager.Shared().playBackgroundMusic();
     }
 
     public childrenCreated (): void {
@@ -23,7 +23,7 @@ class SceneBegin extends eui.Component {
     }
 
     public onclick_begin (): void {
-        SoundManager.Shared().PlayClick();
+        SoundManager.Shared().playClickSound();
         this.parent.addChild(SceneLevel.Shared());
         this.parent.removeChild(this);
     }

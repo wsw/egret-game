@@ -13,6 +13,7 @@ class SoundManager {
     private _wrong: egret.Sound;//如果错误
     private _bgm: egret.Sound;//背景音乐
     private _bgm_channel: egret.SoundChannel;//保存用来静音用
+    private _bgmChannel: egret.SoundChannel;
 
     public constructor() {
         this._click = new egret.Sound();
@@ -26,71 +27,47 @@ class SoundManager {
         this._word = new egret.Sound();
         this._word.load("resource/assets/sound/type_word.mp3");
     }
-    public PlayBGM() {
-        if(this.IsMusic) {
-            this._bgm_channel = this._bgm.play(0,0);
-        }
-
-    }
-    public StopBGM() {
-        if(this._bgm_channel != null) {
-            this._bgm_channel.stop();
+    public playBackgroundMusic(): void {
+        if (this.isMusic) {
+            this._bgmChannel = this._bgm.play(0, 0);
         }
     }
-    public PlayClick() {
-        if(this.IsSound) {
-            this._click.play(0,1);
+    public stopBackgroundMusic(): void {
+        if (this._bgmChannel) {
+            this._bgmChannel.stop();
         }
     }
-    public PlayRight() {
-        if(this.IsSound) {
-            this._right.play(0,1);
-        }
+    public playClickSound(): void {
+        this.isSound && this._click.play(0, 1);
     }
-    public PlayWrong() {
-        if(this.IsSound) {
-            this._wrong.play(0,1);
-        }
+    public playRightSound(): void {
+        this.isSound && this._right.play(0, 1);
     }
-    public PlayWord() {
-        if(this.IsSound) {
-            this._word.play(0,1);
-        }
+    public playWrongSound(): void {
+        this.isSound && this._wrong.play(0, 1);
+    }
+    public playWordSound(): void {
+        this.isSound && this._word.play(0, 1);
     }
     //音乐是否播放，保存设置
-    public set IsMusic(value) {
-        if(!value) {
-            egret.localStorage.setItem("ismusic","0");
-            this.StopBGM();
+    public set isMusic(value: boolean) {
+        if (value) {
+            egret.localStorage.setItem('isMusic', '1');
+            this.playBackgroundMusic();
         } else {
-            egret.localStorage.setItem("ismusic","1");
-            this.PlayBGM();
+            egret.localStorage.setItem('isMusic', '0');
+            this.stopBackgroundMusic();
         }
     }
-    public get IsMusic(): boolean {
-        var b = egret.localStorage.getItem("ismusic");
-        if(!b) {
-            return true;
-        }
-        else {
-            return b == "1";
-        }
+    public get isMusic(): boolean {
+        let b = egret.localStorage.getItem('isMusic');
+        return b === '1' ? true : false;
     }
     //声效是否播放，保存设置
-    public set IsSound(value) {
-        if(value) {
-            egret.localStorage.setItem("isSound","1");
-        } else {
-            egret.localStorage.setItem("isSound","0");
-        }
+    public set isSound(value: boolean) {
+        egret.localStorage.setItem('isSound', value ? '1': '0');
     }
-    public get IsSound(): boolean {
-        var b = egret.localStorage.getItem("isSound");
-        if(b == null || b == "") {
-            return true;
-        }
-        else {
-            return b == "1";
-        }
+    public get isSound(): boolean {
+        return egret.localStorage.getItem('isSound') === '1';
     }
 }

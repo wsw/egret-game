@@ -51,6 +51,7 @@ class SceneLevel extends eui.Component {
         this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onclick_back, this);
     }
     public onclick_level (e: egret.TouchEvent) {
+        SoundManager.Shared().playClickSound();
         let icon = <LevelIcon>e.currentTarget;
         this.parent.addChild(SceneGame.Shared());
         SceneGame.Shared().initLevel(icon.level);

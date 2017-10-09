@@ -24,21 +24,21 @@ class GameSetting extends eui.Component {
         this.update_buttonstate();
     }
     private click_agree() {
-        SoundManager.Shared().PlayClick();
+        SoundManager.Shared().playClickSound();
         this.parent.removeChild(this);
     }
     private click_music() {
-        SoundManager.Shared().PlayClick();
-        SoundManager.Shared().IsMusic = !SoundManager.Shared().IsMusic;
+        SoundManager.Shared().playClickSound();
+        SoundManager.Shared().isMusic = !SoundManager.Shared().isMusic;
         this.update_buttonstate();
     }
     private click_sound() {
-        SoundManager.Shared().PlayClick();
-        SoundManager.Shared().IsSound = !SoundManager.Shared().IsSound;
+        SoundManager.Shared().playClickSound();
+        SoundManager.Shared().isSound = !SoundManager.Shared().isSound;
         this.update_buttonstate();
     }
     private update_buttonstate () {
-        this.img_music_disable.visible = !SoundManager.Shared().IsMusic;
-        this.img_sound_disable.visible = !SoundManager.Shared().IsSound;
+        this.img_music_disable.visible = !SoundManager.Shared().isMusic;
+        this.img_sound_disable.visible = !SoundManager.Shared().isSound;
     }
 }

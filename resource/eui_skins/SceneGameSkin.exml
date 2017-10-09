@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SceneGameSkin" width="720" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
-	<e:Image width="720" height="1136" x="4" y="0" source="GameBG3_jpg"/>
+	<e:Image width="720" height="1136" x="0" y="0" source="GameBG3_jpg"/>
 	<e:Button id="btn_back" label="" x="24" y="9" width="95" height="77" anchorOffsetX="0">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">

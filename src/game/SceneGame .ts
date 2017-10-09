@@ -76,8 +76,11 @@ class SceneGame extends eui.Component {
             }
             if (check === LevelDataManager.Shared().getLevel(this.levelIndex).answer) {
                 this.showWin();
+                SoundManager.Shared().playRightSound();
             } else if (check.length === 4) {
-                SoundManager.Shared().PlayWrong();
+                SoundManager.Shared().playWrongSound();
+            } else {
+                SoundManager.Shared().playWordSound();
             }
         }
     }
